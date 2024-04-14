@@ -1,51 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 
-public class SwitchInteraction : MonoBehaviour, IDragHandler,IEndDragHandler
-{
+    public class SwitchInteraction : MonoBehaviour, IDragHandler
+    {
     [SerializeField]
-    Transform targetObject;
-    private Vector3 newRotation;
-    private Quaternion originalRotation;
+    GameObject offOnSwitchPanel;
 
-    bool isSwitchedOn;
-
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        originalRotation = targetObject.rotation;
-        newRotation = new Vector3(0, 0, 45);
+
     }
+
     public void OnDrag(PointerEventData eventData)
-    {
-        targetObject.rotation = Quaternion.Euler(newRotation);
-        CheckIfSwitchIsOn();
+        {
+        offOnSwitchPanel.GetComponent<OffOnSwitch>().CheckIfSwitchIsOn();
         Debug.Log("Drag this");
+        }
+
     }
 
-    private void CheckIfSwitchIsOn()
-    {
-        isSwitchedOn = true;
-        StartCoroutine(SwitchOperation());
-    }
-
-    IEnumerator SwitchOperation()
-    {
-        if (isSwitchedOn == true &&targetObject.rotation == Quaternion.Euler(newRotation))
-            yield return new WaitForSeconds(2);
-
-        targetObject.rotation = originalRotation;
-        isSwitchedOn= false;
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
-}

@@ -399,6 +399,7 @@ GameObject:
   - component: {fileID: 708272737}
   - component: {fileID: 708272739}
   - component: {fileID: 708272738}
+  - component: {fileID: 708272740}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -466,6 +467,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708272736}
   m_CullTransparentMesh: 1
+--- !u!114 &708272740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708272736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfb43dfa3eeadd540ab0de9e47425e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  switchOff: {fileID: 1890544239}
+  switchOn: {fileID: 1229317159}
 --- !u!1 &1151945176
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +607,6 @@ GameObject:
   - component: {fileID: 1229317160}
   - component: {fileID: 1229317164}
   - component: {fileID: 1229317163}
-  - component: {fileID: 1229317162}
   - component: {fileID: 1229317161}
   m_Layer: 5
   m_Name: SwitchOn
@@ -642,19 +656,6 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls: []
---- !u!114 &1229317162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1229317159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c0cf079dded62d489c061bed6680106, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetObject: {fileID: 1229317160}
 --- !u!114 &1229317163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1359,15 +1360,15 @@ GameObject:
   - component: {fileID: 1890544240}
   - component: {fileID: 1890544242}
   - component: {fileID: 1890544241}
-  - component: {fileID: 1890544244}
   - component: {fileID: 1890544243}
+  - component: {fileID: 1890544244}
   m_Layer: 5
   m_Name: SwitchOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1890544240
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1443,22 +1444,6 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls: []
-  - eventID: 14
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1796462751}
-          m_TargetAssemblyTypeName: CounterManager, Assembly-CSharp
-          m_MethodName: CountNumber
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!114 &1890544244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1471,7 +1456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c0cf079dded62d489c061bed6680106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 1890544240}
+  offOnSwitchPanel: {fileID: 708272736}
 --- !u!1 &2070164702
 GameObject:
   m_ObjectHideFlags: 0
