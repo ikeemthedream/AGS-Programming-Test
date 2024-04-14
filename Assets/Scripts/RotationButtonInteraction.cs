@@ -16,6 +16,9 @@ public class RotationButtonInteraction : MonoBehaviour, IPointerEnterHandler, IP
     bool isHoveringButton = true;
     bool isPressingingButton;
 
+    [SerializeField]
+    SpinDial spinDial;
+
     void Start()
     {
         InitialSetup();
@@ -66,6 +69,9 @@ public class RotationButtonInteraction : MonoBehaviour, IPointerEnterHandler, IP
         else
         {
             ButtonWhenHovered();
+            //spin dial
+            spinDial.GetComponent<SpinDial>().shouldRotate = !spinDial.GetComponent<SpinDial>().shouldRotate;
+
         }
 
         isPressingingButton = false;

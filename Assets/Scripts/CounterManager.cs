@@ -5,27 +5,28 @@ using TMPro;
 
 public class CounterManager : MonoBehaviour
 {
+    public  TMP_Text counterText;
     [SerializeField]
-    TMP_Text counterText;
+    GameManager manager;
 
     public int counter;
     // Start is called before the first frame update
     void Start()
     {
         counter = 0;
-
     }
     public void CountNumber()
     {
         counter++;
-        if (counter > 10)
-            counter = 0;
 
         counterText.text = counter.ToString();
+
+        manager.GetComponent<GameManager>().IncrementTheMasterCounter();
+
     }
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

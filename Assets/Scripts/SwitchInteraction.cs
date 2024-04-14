@@ -2,10 +2,15 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-    public class SwitchInteraction : MonoBehaviour, IDragHandler
-    {
+public class SwitchInteraction : MonoBehaviour, IDragHandler
+{
     [SerializeField]
     GameObject offOnSwitchPanel;
+    [SerializeField]
+    GameObject switchCounter;
+
+    public bool isToggled;
+
 
     private void Start()
     {
@@ -13,10 +18,12 @@ using UnityEngine.EventSystems;
     }
 
     public void OnDrag(PointerEventData eventData)
-        {
+    {
         offOnSwitchPanel.GetComponent<OffOnSwitch>().CheckIfSwitchIsOn();
-        Debug.Log("Drag this");
-        }
+        switchCounter.GetComponent<CounterManager>().CountNumber();
 
+        isToggled = !isToggled;
     }
+
+}
 
