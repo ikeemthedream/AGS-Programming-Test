@@ -14,7 +14,7 @@ public class ButtonInteraction : MonoBehaviour, IPointerEnterHandler, IPointerEx
     Image image;
 
     bool isHoveringButton = true;
-    bool isPressingingButton = false;
+    bool isPressingingButton = true;
 
     void Start()
     {
