@@ -6,6 +6,7 @@ using TMPro;
 public class CounterManager : MonoBehaviour
 {
     public  TMP_Text counterText;
+
     [SerializeField]
     GameManager manager;
 
@@ -22,11 +23,6 @@ public class CounterManager : MonoBehaviour
         counterText.text = counter.ToString();
 
         manager.GetComponent<GameManager>().IncrementTheMasterCounter();
-
-    }
-    // Update is called once per frame
-    void Update()
-    {
 
     }
 }

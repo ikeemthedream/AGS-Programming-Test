@@ -7,6 +7,7 @@ public class OffOnSwitch : MonoBehaviour
 {
     [SerializeField]
     GameObject switchOff;
+
     [SerializeField]
     GameObject switchOn;
 
@@ -18,11 +19,21 @@ public class OffOnSwitch : MonoBehaviour
 
     IEnumerator SwitchOperation()
     {
-        switchOff.SetActive(false);
-        switchOn.SetActive(true);
+        SwitchOn();
         yield return new WaitForSeconds(2.5f);
+        SwitchOff();
+    }
+
+    private void SwitchOff()
+    {
         switchOff.SetActive(true);
         switchOn.SetActive(false);
+    }
+
+    private void SwitchOn()
+    {
+        switchOff.SetActive(false);
+        switchOn.SetActive(true);
     }
 }
 

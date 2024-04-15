@@ -5,15 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public int masterCounter;
-
     [SerializeField]
     GameObject RestartPanel;
 
     [SerializeField]
     SpinDial spinDial;
+
     [SerializeField]
     List<CounterManager> counterManagerList;
+
+    public int masterCounter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,6 @@ public class GameManager : MonoBehaviour
 
     public void IncrementTheMasterCounter()
     {
-
         if(masterCounter == 10 )
         {
             TryAgainPanel();
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    #region Gameloop and Options
     private void TryAgainPanel()
     {
         RestartPanel.SetActive(true);
@@ -58,4 +60,5 @@ public class GameManager : MonoBehaviour
         Application.Quit();
         UnityEditor.EditorApplication.isPlaying = false;
     }
+    #endregion
 }

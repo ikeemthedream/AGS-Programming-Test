@@ -8,13 +8,10 @@ public class SpinDial : MonoBehaviour
     [SerializeField]
     RectTransform dialTransform;
 
-    RectTransform originalTransform;
-
-    [SerializeField]
-    int speed;
-
     [SerializeField]
     SwitchInteraction switchInteraction;
+
+    int speed;
 
     bool isToggled;
     
@@ -22,10 +19,8 @@ public class SpinDial : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        
+    {        
         speed = -500;
-
     }
 
     // Update is called once per frame 
@@ -34,7 +29,7 @@ public class SpinDial : MonoBehaviour
         RotateDial();
     }
 
-
+    #region Rotation Operations
     public void RotateDial()
     {
         isToggled = switchInteraction.GetComponent<SwitchInteraction>().isToggled;
@@ -63,4 +58,5 @@ public class SpinDial : MonoBehaviour
     {
         dialTransform.localRotation = Quaternion.identity;
     }
+    #endregion
 }

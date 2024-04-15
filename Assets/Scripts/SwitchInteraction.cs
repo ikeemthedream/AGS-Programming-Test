@@ -11,12 +11,6 @@ public class SwitchInteraction : MonoBehaviour, IDragHandler
 
     public bool isToggled;
 
-
-    private void Start()
-    {
-
-    }
-
     public void OnDrag(PointerEventData eventData)
     {
         offOnSwitchPanel.GetComponent<OffOnSwitch>().CheckIfSwitchIsOn();
